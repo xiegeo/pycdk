@@ -6,8 +6,7 @@ import pycdk
 
 ################################## Start JVM #########################################
 if not isJVMStarted():
-    cdk_path = os.path.join(pycdk.__path__[0], 'cdk-2.2.jar')
-    # cdk_path = os.path.join('pycdk/cdk-2.2.jar')
+    cdk_path = os.path.join(pycdk.__path__[0], 'cdk-2.10.jar')
     jpype.addClassPath(cdk_path)
     startJVM(getDefaultJVMPath(), "-ea", "-Djava.class.path=%s" % cdk_path)
     cdk = JPackage('org').openscience.cdk
@@ -19,8 +18,8 @@ def MolFromSmiles(smi):
     function = cdk.smiles.SmilesParser(cdk.DefaultChemObjectBuilder.getInstance())
     try:
          mol = function.parseSmiles(smi)
-    except:
-        raise IOError('invalid smiles input')
+    except Exception as e:
+        raise IOError(f'invalid smiles input: {e}')
     return mol
 
 def MolFromInchi(inchi):
