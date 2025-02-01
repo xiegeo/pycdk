@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
 setup(name='pycdk',
-      version='0.0.1_alpha',
+      version='0.0.2',
       description='A Python wrapper for the CDK',
       license='AGPLv3',
-      author='Ji Hongchao',
-      author_email='ji.hongchao@foxmail.com',
-      url='https://github.com/hcji/pycdk',
+      author='Ji Hongchao, Xie Yuguang',
+      author_email='ji.hongchao@foxmail.com, george@xiegeo.com',
+      url='https://github.com/xiegeo/pycdk',
 	  include_package_data = True,
       packages=find_packages()
      )
